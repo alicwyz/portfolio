@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const projectInfo = document.getElementById('project-info');
 
     const titles = [
-        "Jogo de Conway", "Composição Procedural", "Máquinas Poética", "Labirinto Retro"
+        "Jogo de Conway", "Composição Procedural", "Máquinas Poéticas", "Labirinto Retro"
     ]
 
     const desc = [
