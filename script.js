@@ -34,13 +34,39 @@ document.addEventListener('DOMContentLoaded', function () {
             description.textContent = desc[projectId];
             projectInfo.appendChild(description);
 
-            // Add video player
-            const video = document.createElement('video');
-            video.src = videoSrc;
-            video.controls = true;
-            video.autoplay = true;
-            video.muted = true; // Muted autoplay is often required by browsers
-            projectInfo.appendChild(video);
+            // Add loading message and spinner
+            const loadingMessage = document.createElement('div');
+            loadingMessage.className = 'loading-message';
+            loadingMessage.textContent = 'Loading video...';
+            projectInfo.appendChild(loadingMessage);
+
+            const spinner = document.createElement('div');
+            spinner.className = 'spinner';
+            projectInfo.appendChild(spinner);
+
+            // Add Google Drive video embed
+            const iframe = document.createElement('iframe');
+            iframe.src = videoSrc;
+            iframe.width = "640"; // Adjust width as needed
+            iframe.height = "360"; // Adjust height as needed
+            iframe.style.border = "none";
+            iframe.style.borderRadius = "8px";
+            iframe.style.marginTop = "20px";
+            iframe.style.display = "none"; // Hide the iframe initially
+
+            // When the iframe is loaded, hide the loading message and show the video
+            iframe.onload = function () {
+                loadingMessage.style.display = "none";
+                spinner.style.display = "none";
+                iframe.style.display = "block";
+            };
+
+            iframe.onerror = function () {
+                loadingMessage.textContent = 'Failed to load video. Please try again.';
+                spinner.style.display = "none";
+            };
+
+            projectInfo.appendChild(iframe);
         });
     });
 });
