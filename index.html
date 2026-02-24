@@ -19,10 +19,10 @@
 
 <!-- Navigation -->
 <nav id="main-nav">
-  <div class="nav-logo">Your<span>Name</span></div>
+  <div class="nav-logo">Alice<span>Reis</span></div>
   <ul class="nav-links">
-    <li><a href="#" data-page="home" class="active">Index</a></li>
-    <li><a href="#" data-page="animation">Animation</a></li>
+    <li><a href="#" data-page="home" class="active">Home</a></li>
+    <li><a href="#" data-page="animation">Animação</a></li>
     <li><a href="#" data-page="3d">3D</a></li>
     <li><a href="#" data-page="touchdesigner">TouchDesigner</a></li>
   </ul>
@@ -34,25 +34,19 @@
   <section class="hero">
     <div class="hero-text">
       <h1>
-        <span class="line">Visual</span>
-        <span class="line">Artist &</span>
+        <span class="line">Artista</span>
+        <span class="line">Técnica &</span>
         <span class="line accent">Motion</span>
         <span class="line accent">Designer</span>
       </h1>
-      <p>Creating animation, 3D worlds, and generative systems that live somewhere between the precise and the poetic.</p>
-      <div class="hero-tags">
-        <span class="tag">Animation</span>
-        <span class="tag">3D</span>
-        <span class="tag">TouchDesigner</span>
-        <span class="tag">Motion</span>
-        <span class="tag">Generative</span>
-      </div>
+      <p>
+        Criando obras audiovisuais que habitam entre o preciso e o poético na era digital. 
+      </p>
     </div>
 
     <div class="hero-visual">
       <div class="hero-cell large" data-label="Featured Work">
         <div class="placeholder-inner">
-          <!-- Replace with <img src="YOUR_DRIVE_URL" alt=""> -->
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
             <rect x="2" y="2" width="20" height="20" rx="1"/><path d="M8 8l8 4-8 4V8z"/>
           </svg>
@@ -83,8 +77,6 @@
   <section class="reel-strip">
     <div class="strip-label">Selected Works</div>
     <div class="strip-scroll">
-      <!-- Replace src="" with your Google Drive direct links -->
-      <!-- Format: https://drive.google.com/uc?export=view&id=FILE_ID -->
       <div class="strip-item" data-title="Work 01">
         <div class="grid-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="1"/></svg><span>Add Image</span></div>
         <div class="overlay"><span>Work 01</span></div>
@@ -114,20 +106,20 @@
 
   <footer class="about-footer">
     <div>
-      <h2>Location</h2>
-      <p>Your City,<br>Country</p>
+      <h2>Localização</h2>
+      <p>Belo Horizonte,<br>Brasil</p>
     </div>
     <div>
-      <h2>About</h2>
-      <p>A few sentences about you — your background, approach to your work, what drives you creatively. Keep it concise and in your own voice. This is where a viewer decides if they want to reach out.</p>
+      <h2>Sobre</h2>
+      <p>Estudante do curso de "Cinema de Animação e Artes Digitais" na UFMG. Apaixonada por Cinema, Animação e Mídias Computacionais.</p>
     </div>
     <div>
       <h2>Contact</h2>
       <ul class="contact-list">
-        <li><a href="mailto:you@email.com">you@email.com</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Vimeo</a></li>
-        <li><a href="#">LinkedIn</a></li>
+        <li><a href="mailto:alicwyz@gmail.com">Email</a></li>
+        <li><a href="https://alicwyz.github.io/cv/">Currículo</a></li>
+        <li><a href="https://www.instagram.com/anrcho_piuu/">Instagram</a></li>
+        <li><a href="https://github.com/alicwyz">Github</a></li>
       </ul>
     </div>
   </footer>
@@ -138,13 +130,13 @@
 <!--ANIMATION PAGE -->
 <div id="page-animation" class="page">
   <div class="section-header">
-    <h1>Animation</h1>
-    <p>Motion, narrative, and time-based work</p>
+    <h1>Animação</h1>
+    <p>Movimento, narrativa e imagens-tempo</p>
   </div>
   <div class="sub-nav" id="sub-animation">
     <button class="sub-nav-btn active" data-sub="anim-2d">2D</button>
     <button class="sub-nav-btn" data-sub="anim-3d">3D</button>
-    <button class="sub-nav-btn" data-sub="anim-story">Storyboarding &amp; Character Design</button>
+    <button class="sub-nav-btn" data-sub="anim-story">Storyboarding &amp; Design de Personagem</button>
   </div>
 
   <!-- 2D -->
@@ -163,6 +155,11 @@
   <div id="anim-story" class="subsection">
     <div class="work-grid" id="grid-anim-story"></div>
   </div>
+
+  <div class="scroll-hint" style="position:absolute;left:50%;bottom:32px;">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
 </div>
 
 
@@ -170,10 +167,10 @@
 <div id="page-3d" class="page">
   <div class="section-header">
     <h1>3D</h1>
-    <p>Modelling, sculpting, shading, and procedural geometry</p>
+    <p>Modelagem, escultura, shading e geometria procedural</p>
   </div>
   <div class="sub-nav" id="sub-3d">
-    <button class="sub-nav-btn active" data-sub="3d-model">Modelling &amp; Sculpting</button>
+    <button class="sub-nav-btn active" data-sub="3d-model">Modelagem &amp; Escultura</button>
     <button class="sub-nav-btn" data-sub="3d-shade">Shading &amp; Geometry Nodes</button>
   </div>
 
@@ -183,6 +180,11 @@
   <div id="3d-shade" class="subsection">
     <div class="work-grid" id="grid-3d-shade"></div>
   </div>
+
+  <div class="scroll-hint" style="position:absolute;left:50%;bottom:32px;">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
 </div>
 
 
@@ -190,9 +192,14 @@
 <div id="page-touchdesigner" class="page">
   <div class="section-header">
     <h1>TouchDesigner</h1>
-    <p>Real-time generative and interactive systems</p>
+    <p>Sistema generativos e interativos em tempo-real</p>
   </div>
   <div class="work-grid" id="grid-td"></div>
+
+  <div class="scroll-hint" style="position:absolute;left:50%;bottom:32px;">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
 </div>
 
 

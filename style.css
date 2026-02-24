@@ -248,6 +248,7 @@ nav.scrolled { border-bottom-color: var(--border); }
 /* Featured reel strip */
 .reel-strip {
     padding: 0 40px 80px;
+    cursor: none;
 }
 .strip-label {
     font-family: var(--font-mono);
@@ -472,6 +473,7 @@ nav.scrolled { border-bottom-color: var(--border); }
     pointer-events: none;
     transition: opacity 300ms;
     backdrop-filter: blur(4px);
+    cursor: none;
 }
 #lightbox.open {
     opacity: 1;
@@ -561,4 +563,19 @@ nav.scrolled { border-bottom-color: var(--border); }
     .nav-links { gap: 16px; }
     .work-grid { padding: 20px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
     .section-header, .sub-nav, .reel-strip { padding-left: 20px; padding-right: 20px; }
+}
+/* ── Video play icon ─────────────────────────────────────────── */
+.play-icon {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px; height: 40px;
+    color: rgba(255,255,255,0.7);
+    pointer-events: none;
+    transition: color 250ms, transform 250ms;
+    filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
+}
+.grid-item:hover .play-icon {
+    color: var(--accent);
+    transform: translate(-50%, -50%) scale(1.1);
 }
