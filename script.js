@@ -567,7 +567,7 @@ function buildFeaturedStrip() {
   if (!container) return;
   container.innerHTML = '';
 
-  const picks = shuffle(WORKS['featured']).slice(0, 5);
+  const picks = shuffle(WORKS['featured']).slice(0, 7);
 
   picks.forEach(item => {
     const el = document.createElement('div');
@@ -584,8 +584,6 @@ function buildFeaturedStrip() {
     el.innerHTML += `<div class="overlay"><span>${item.title}</span></div>`;
 
     el.addEventListener('click', () => openLightbox(item));
-    el.addEventListener('mouseenter', () => cursor.classList.add('expanded'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('expanded'));
     container.appendChild(el);
   });
 }
@@ -621,8 +619,6 @@ function buildHeroCells() {
 
     cell.style.cursor = 'pointer';
     cell.addEventListener('click', () => openLightbox(item));
-    cell.addEventListener('mouseenter', () => cursor.classList.add('expanded'));
-    cell.addEventListener('mouseleave', () => cursor.classList.remove('expanded'));
   });
 }
 
@@ -753,19 +749,3 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', current > 10);
   lastScroll = current;
 }, { passive: true });
-
-
-/* CUSTOM CURSOR */
-
-const cursor = document.getElementById('cursor');
-
-document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
-});
-
-// Static elements — dynamic ones (grid items, strip items) register in their own builders
-document.querySelectorAll('a, button, .hero-cell, .tag').forEach(el => {
-el.addEventListener('mouseenter', () => cursor.classList.add('expanded'));
-el.addEventListener('mouseleave', () => cursor.classList.remove('expanded'));
-});

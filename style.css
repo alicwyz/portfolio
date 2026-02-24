@@ -1,4 +1,4 @@
-/* ── Reset & Base ─────────────────────────────────────────────── */
+/*  Reset & Base  */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -7,7 +7,7 @@
     --bg3:       #1a1a1a;
     --border:    #222222;
     --text:      #e8e8e8;
-    --muted:     #666666;
+    --muted:     #6c6c6c;
     --accent:    #b001dc;
     --accent-dim:#4e0063;
     --font-mono: 'Space Mono', monospace;
@@ -25,10 +25,9 @@ body {
     font-weight: 300;
     min-height: 100vh;
     overflow-x: hidden;
-    cursor: none;
 }
 
-/* ── Noise texture overlay ───────────────────────────────────── */
+/*  Noise texture overlay  */
 body::before {
     content: '';
     position: fixed;
@@ -40,25 +39,7 @@ body::before {
     z-index: 9999;
 }
 
-/* ── Custom cursor ───────────────────────────────────────────── */
-#cursor {
-    position: fixed;
-    width: 8px; height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(-50%, -50%);
-    transition: transform 80ms, width 200ms, height 200ms, opacity 200ms;
-}
-#cursor.expanded {
-    width: 36px; height: 36px;
-    background: transparent;
-    border: 1px solid var(--accent);
-    opacity: 0.7;
-}
-
-/* ── Progress line ───────────────────────────────────────────── */
+/*  Progress line  */
 #progress {
     position: fixed;
     top: 0; left: 0;
@@ -71,7 +52,7 @@ body::before {
     box-shadow: 0 0 8px var(--accent);
 }
 
-/* ── Navigation ──────────────────────────────────────────────── */
+/*  Navigation  */
 nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -97,7 +78,6 @@ nav.scrolled { border-bottom-color: var(--border); }
     letter-spacing: 0.12em;
     color: var(--text);
     text-transform: uppercase;
-    cursor: none;
     user-select: none;
 }
 .nav-logo span { color: var(--accent); }
@@ -114,7 +94,6 @@ nav.scrolled { border-bottom-color: var(--border); }
     text-transform: uppercase;
     color: var(--muted);
     text-decoration: none;
-    cursor: none;
     position: relative;
     transition: color 200ms;
 }
@@ -134,7 +113,7 @@ nav.scrolled { border-bottom-color: var(--border); }
 }
 .nav-links a.active { color: var(--accent); }
 
-/* ── Pages ───────────────────────────────────────────────────── */
+/*  Pages  */
 .page {
     min-height: 100vh;
     padding-top: var(--nav-h);
@@ -151,7 +130,7 @@ nav.scrolled { border-bottom-color: var(--border); }
     pointer-events: all;
 }
 
-/* ── Hero / About ────────────────────────────────────────────── */
+/*  Hero / About  */
 #page-home {
     display: flex;
     flex-direction: column;
@@ -248,7 +227,6 @@ nav.scrolled { border-bottom-color: var(--border); }
 /* Featured reel strip */
 .reel-strip {
     padding: 0 40px 80px;
-    cursor: none;
 }
 .strip-label {
     font-family: var(--font-mono);
@@ -282,7 +260,6 @@ nav.scrolled { border-bottom-color: var(--border); }
     border: 1px solid var(--border);
     position: relative;
     overflow: hidden;
-    cursor: none;
     transition: border-color 300ms;
 }
 .strip-item:hover { border-color: var(--accent); }
@@ -340,11 +317,10 @@ nav.scrolled { border-bottom-color: var(--border); }
     color: var(--muted);
     text-decoration: none;
     transition: color 200ms;
-    cursor: none;
 }
 .contact-list a:hover { color: var(--accent); }
 
-/* ── Section Pages ───────────────────────────────────────────── */
+/*  Section Pages  */
 .section-header {
     padding: 60px 40px 40px;
     border-bottom: 1px solid var(--border);
@@ -378,7 +354,6 @@ nav.scrolled { border-bottom-color: var(--border); }
     border: none;
     border-bottom: 2px solid transparent;
     padding: 18px 24px;
-    cursor: none;
     transition: color 200ms, border-color 200ms;
 }
 .sub-nav-btn:hover { color: var(--text); }
@@ -401,7 +376,6 @@ nav.scrolled { border-bottom-color: var(--border); }
     border: 1px solid var(--border);
     position: relative;
     overflow: hidden;
-    cursor: none;
 }
 .grid-item img, .grid-item video {
     width: 100%; height: 100%;
@@ -460,7 +434,7 @@ nav.scrolled { border-bottom-color: var(--border); }
     color: var(--border);
 }
 
-/* ── Lightbox ────────────────────────────────────────────────── */
+/*  Lightbox  */
 #lightbox {
     position: fixed;
     inset: 0;
@@ -473,7 +447,6 @@ nav.scrolled { border-bottom-color: var(--border); }
     pointer-events: none;
     transition: opacity 300ms;
     backdrop-filter: blur(4px);
-    cursor: none;
 }
 #lightbox.open {
     opacity: 1;
@@ -509,16 +482,15 @@ nav.scrolled { border-bottom-color: var(--border); }
     background: none;
     border: 1px solid var(--border);
     padding: 8px 16px;
-    cursor: none;
     transition: color 200ms, border-color 200ms;
 }
 .lb-close:hover { color: var(--accent); border-color: var(--accent); }
 
-/* ── Sub-section panels ──────────────────────────────────────── */
+/*  Sub-section panels  */
 .subsection { display: none; }
 .subsection.active { display: block; }
 
-/* ── Scroll hint ─────────────────────────────────────────────── */
+/*  Scroll hint  */
 .scroll-hint {
     position: absolute;
     bottom: 32px;
@@ -548,13 +520,13 @@ nav.scrolled { border-bottom-color: var(--border); }
     50% { transform: translateX(-50%) translateY(6px); }
 }
 
-/* ── Utility ─────────────────────────────────────────────────── */
+/*  Utility  */
 .sr-only {
     position: absolute; width: 1px; height: 1px;
     overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
 }
 
-/* ── Responsive ──────────────────────────────────────────────── */
+/*  Responsive  */
 @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; gap: 40px; padding: 40px 20px; }
     .hero-visual { display: none; }
@@ -564,7 +536,7 @@ nav.scrolled { border-bottom-color: var(--border); }
     .work-grid { padding: 20px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
     .section-header, .sub-nav, .reel-strip { padding-left: 20px; padding-right: 20px; }
 }
-/* ── Video play icon ─────────────────────────────────────────── */
+/*  Video play icon  */
 .play-icon {
     position: absolute;
     top: 50%; left: 50%;
