@@ -1,42 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Animation & Digital Arts</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="particles-js"></div>
-    <div id="header">
-        <h1>Portfolio</h1>
-        <p>Procedural Animation & Live Musical Systems</p>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+
+<!-- Progress bar -->
+<div id="progress"></div>
+
+<!-- Navigation -->
+<nav id="main-nav">
+  <div class="nav-logo">Your<span>Name</span></div>
+  <ul class="nav-links">
+    <li><a href="#" data-page="home" class="active">Index</a></li>
+    <li><a href="#" data-page="animation">Animation</a></li>
+    <li><a href="#" data-page="3d">3D</a></li>
+    <li><a href="#" data-page="touchdesigner">TouchDesigner</a></li>
+  </ul>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="page-home" class="page active">
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>
+        <span class="line">Visual</span>
+        <span class="line">Artist &</span>
+        <span class="line accent">Motion</span>
+        <span class="line accent">Designer</span>
+      </h1>
+      <p>Creating animation, 3D worlds, and generative systems that live somewhere between the precise and the poetic.</p>
+      <div class="hero-tags">
+        <span class="tag">Animation</span>
+        <span class="tag">3D</span>
+        <span class="tag">TouchDesigner</span>
+        <span class="tag">Motion</span>
+        <span class="tag">Generative</span>
+      </div>
     </div>
-    <div id="projects">
-        <div class="project" data-project="0" data-video="https://drive.google.com/file/d/1RDhtgvVsE4sHVYDnehmmpo1XLCw1iR51/preview">
-        <div class="project-image" style="background-image: url('images/Conway.png');"></div>
-        <span class="project-title">Jogo de Conway</span>
+
+    <div class="hero-visual">
+      <div class="hero-cell large" data-label="Featured Work">
+        <div class="placeholder-inner">
+          <!-- Replace with <img src="YOUR_DRIVE_URL" alt=""> -->
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="1"/><path d="M8 8l8 4-8 4V8z"/>
+          </svg>
         </div>
-        <div class="project" data-project="1" data-video="https://drive.google.com/file/d/17hJlX3YuuzA3dUh86zAesmAzyi0MElS1/preview">
-            <div class="project-image" style="background-image: url('images/Composição.png');"></div>
-            <span class="project-title">Composição Procedural</span>
+      </div>
+      <div class="hero-cell" data-label="3D">
+        <div class="placeholder-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
         </div>
-        <div class="project" data-project="2" data-video="https://drive.google.com/file/d/1LoyUhso9de5NC3RLFYbQLKzkTmq8H5bf/preview">
-            <div class="project-image" style="background-image: url('images/Máquinas.png');"></div>
-            <span class="project-title">Máquinas Poéticas</span>
+      </div>
+      <div class="hero-cell" data-label="TD">
+        <div class="placeholder-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+          </svg>
         </div>
-        <div class="project" data-project="3" data-video="https://drive.google.com/file/d/1A27JUZVTX0wKoE9QCwPR4U4QumnT20e7/preview">
-            <div class="project-image" style="background-image: url('images/Labirinto.png');"></div>
-            <span class="project-title">Labirinto Retro</span>
-        </div>
+      </div>
     </div>
-    <div id="project-info">
-        <!-- Project info will be dynamically inserted here -->
+
+    <div class="scroll-hint" style="position:absolute;left:50%;bottom:32px;">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
-    <div id="footer">
-        <p>Contact: <a href="mailto:alicwyz@gmail.com">alicwyz@gmail.com</a> | <a href="https://github.com/alicwyz" target="_blank">GitHub</a></p>
+  </section>
+
+  <section class="reel-strip">
+    <div class="strip-label">Selected Works</div>
+    <div class="strip-scroll">
+      <!-- Replace src="" with your Google Drive direct links -->
+      <!-- Format: https://drive.google.com/uc?export=view&id=FILE_ID -->
+      <div class="strip-item" data-title="Work 01">
+        <div class="grid-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="1"/></svg><span>Add Image</span></div>
+        <div class="overlay"><span>Work 01</span></div>
+      </div>
+      <div class="strip-item" data-title="Work 02">
+        <div class="grid-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="1"/></svg><span>Add Image</span></div>
+        <div class="overlay"><span>Work 02</span></div>
+      </div>
+      <div class="strip-item" data-title="Work 03">
+        <div class="grid-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="1"/></svg><span>Add Image</span></div>
+        <div class="overlay"><span>Work 03</span></div>
+      </div>
+      <div class="strip-item" data-title="Work 04">
+        <div class="grid-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="1"/></svg><span>Add Image</span></div>
+        <div class="overlay"><span>Work 04</span></div>
+      </div>
+      <div class="strip-item" data-title="Work 05">
+        <div class="grid-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="1"/></svg><span>Add Image</span></div>
+        <div class="overlay"><span>Work 05</span></div>
+      </div>
+      <div class="strip-item" data-title="Work 06">
+        <div class="grid-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="1"/></svg><span>Add Image</span></div>
+        <div class="overlay"><span>Work 06</span></div>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+  </section>
+
+  <footer class="about-footer">
+    <div>
+      <h2>Location</h2>
+      <p>Your City,<br>Country</p>
+    </div>
+    <div>
+      <h2>About</h2>
+      <p>A few sentences about you — your background, approach to your work, what drives you creatively. Keep it concise and in your own voice. This is where a viewer decides if they want to reach out.</p>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><a href="mailto:you@email.com">you@email.com</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Vimeo</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</div><!-- /page-home -->
+
+
+<!--ANIMATION PAGE -->
+<div id="page-animation" class="page">
+  <div class="section-header">
+    <h1>Animation</h1>
+    <p>Motion, narrative, and time-based work</p>
+  </div>
+  <div class="sub-nav" id="sub-animation">
+    <button class="sub-nav-btn active" data-sub="anim-2d">2D</button>
+    <button class="sub-nav-btn" data-sub="anim-3d">3D</button>
+    <button class="sub-nav-btn" data-sub="anim-story">Storyboarding &amp; Character Design</button>
+  </div>
+
+  <!-- 2D -->
+  <div id="anim-2d" class="subsection active">
+    <div class="work-grid" id="grid-anim-2d">
+      <!-- Items injected by JS or manually added below -->
+    </div>
+  </div>
+
+  <!-- 3D Anim -->
+  <div id="anim-3d" class="subsection">
+    <div class="work-grid" id="grid-anim-3d"></div>
+  </div>
+
+  <!-- Storyboarding -->
+  <div id="anim-story" class="subsection">
+    <div class="work-grid" id="grid-anim-story"></div>
+  </div>
+</div>
+
+
+<!-- 3D PAGE -->
+<div id="page-3d" class="page">
+  <div class="section-header">
+    <h1>3D</h1>
+    <p>Modelling, sculpting, shading, and procedural geometry</p>
+  </div>
+  <div class="sub-nav" id="sub-3d">
+    <button class="sub-nav-btn active" data-sub="3d-model">Modelling &amp; Sculpting</button>
+    <button class="sub-nav-btn" data-sub="3d-shade">Shading &amp; Geometry Nodes</button>
+  </div>
+
+  <div id="3d-model" class="subsection active">
+    <div class="work-grid" id="grid-3d-model"></div>
+  </div>
+  <div id="3d-shade" class="subsection">
+    <div class="work-grid" id="grid-3d-shade"></div>
+  </div>
+</div>
+
+
+<!-- TOUCHDESIGNER PAGE -->
+<div id="page-touchdesigner" class="page">
+  <div class="section-header">
+    <h1>TouchDesigner</h1>
+    <p>Real-time generative and interactive systems</p>
+  </div>
+  <div class="work-grid" id="grid-td"></div>
+</div>
+
+
+<!--  LIGHTBOX -->
+<div id="lightbox">
+  <button class="lb-close" id="lb-close">Close ✕</button>
+  <div class="lb-inner">
+    <div id="lb-content"></div>
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
+
+<!-- Script -->
+<script src="script.js"></script>
 </body>
 </html>
