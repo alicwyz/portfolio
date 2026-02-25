@@ -303,6 +303,7 @@ nav.scrolled { border-bottom-color: var(--border); }
     font-size: 0.9rem;
     line-height: 1.7;
     color: #aaa;
+    text-align: justify;
 }
 .contact-list {
     list-style: none;
@@ -366,7 +367,7 @@ nav.scrolled { border-bottom-color: var(--border); }
 .work-grid {
     padding: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, auto));
     gap: 2px;
 }
 
@@ -569,7 +570,7 @@ nav.scrolled { border-bottom-color: var(--border); }
         overflow: visible;
     }
 
-    .work-grid { padding: 0px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .work-grid { padding: 0px; grid-template-columns: 1fr 1fr; }
     .section-header, .sub-nav, .reel-strip { padding-left: 20px; padding-right: 20px; padding-top: 50px; }
 }
 
