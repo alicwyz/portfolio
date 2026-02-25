@@ -371,7 +371,7 @@ nav.scrolled { border-bottom-color: var(--border); }
 }
 
 .grid-item {
-    aspect-ratio: 4/3;
+    aspect-ratio: 16/9;
     background: var(--bg3);
     border: 1px solid var(--border);
     position: relative;
@@ -528,15 +528,52 @@ nav.scrolled { border-bottom-color: var(--border); }
 
 /*  Responsive  */
 @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; gap: 40px; padding: 40px 20px; }
-    .hero-visual { display: none; }
+    .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 5px;
+        padding: 40px 20px;
+    }
+    .hero-visual {
+        justify-self: center;
+        display: grid; /* show it, stacked below hero-text */
+        max-width: 80%;
+        order: 2;
+    }
+    .hero-text { order: 1; }
     .about-footer { grid-template-columns: 1fr; }
-    nav { padding: 0 20px; }
-    .nav-links { gap: 16px; }
-    .work-grid { padding: 20px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-    .section-header, .sub-nav, .reel-strip { padding-left: 20px; padding-right: 20px; }
+
+    /* Nav: logo fixed left, links scroll horizontally */
+    nav {
+        padding: 0 0 0 16px;
+        gap: 12px;
+    }
+    .nav-logo {
+        flex-shrink: 0;
+        padding-right: 8px;
+    }
+    .nav-links {
+        display: flex;
+        gap: 0;
+        overflow-x: auto;
+        overflow-y: visible;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        flex: 1;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links li { flex-shrink: 0; }
+    .nav-links a {
+        margin: 0 16px;
+        line-height: var(--nav-h);
+        overflow: visible;
+    }
+
+    .work-grid { padding: 0px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .section-header, .sub-nav, .reel-strip { padding-left: 20px; padding-right: 20px; padding-top: 50px; }
 }
-/*  Video play icon  */
+
+/* Video play icon  */
 .play-icon {
     position: absolute;
     top: 50%; left: 50%;

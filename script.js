@@ -644,8 +644,10 @@ function openLightbox(item) {
   if (item.type === 'video') {
     const iframe = document.createElement('iframe');
     iframe.src = driveUrl(item.src, 'video');
-    iframe.width = '900';
-    iframe.height = '506';
+    iframe.style.width = 'min(900px, 90vw)';
+    iframe.style.height = 'calc(min(900px, 90vw) * 9 / 16)';
+    iframe.removeAttribute('width');
+    iframe.removeAttribute('height');
     iframe.setAttribute('frameborder', '0');
     iframe.setAttribute('allowfullscreen', '');
     iframe.style.maxWidth = '90vw';
