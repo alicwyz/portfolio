@@ -367,7 +367,7 @@ const WORKS = {
     },
     {
       src: "https://drive.google.com/file/d/1gLzXY5vu6eUK0YvvQzBNfUdbETairhv9/view?usp=drive_link",
-      type: "image",
+      type: "video",
       title: "Geometry Nodes",
       sub: "Projeto pessoal (2023)"
     },
